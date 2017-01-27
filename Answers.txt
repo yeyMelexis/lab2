@@ -1,0 +1,52 @@
+Question 2.1 – Write advantages and disadvantages of behavioral design style
+
+Advantages:
+- A module can be implemented in terms of the desired design algorithm without concern for the hardware implementation details.
+- It specifies the circuit in terms of its expected behavior.
+- It is the closest to a natural language description of the circuit functionality
+Disadvantages:
+- The most difficult to synthesize.
+
+************************************************************************************************
+
+Question 2.2 – Write advantages and disadvantages of structural design style
+
+Advantages:
+- It resembles a schematic drawing with components connected with signals.
+- A structural system representation is closer to the physical implementation than behavioral.
+
+Disadvantages:
+- It is more difficult in using because of large number of details.
+
+
+************************************************************************************************
+
+Question 2.3 – In what cases the behavioral design style should be used and when it is better to apply structural design style? Explain with examples. Can these two design style be mixed in one project?
+
+In cases when you work with synchronous digital schems or difficult combinational logic is better to use behavioral design style.
+
+In cases when you describe simple combinational logic is better to use structural design style. In addition to it structural design style is neesed to use when you want to optimize your digital scheme. 
+
+For example:
+
+Behavioral design style
+///Flip-flop
+
+always @ ( posedge clk)
+if (~reset) begin
+  q <= 1'b0;
+end  else begin
+  q <= data;
+end
+
+
+Structural design style
+
+and(d, a, b);  // where d is the output and a & b are the inputs
+
+************************************************************************************************
+
+Question 2.4 – Compare conditional compilation with the aid of `ifdef statement and generate construct. What advantages and disadvantages of each approach? When is preferable using each of them?
+
+- `ifdef statement is better to use for debugging you Verilog code. 
+- Generate construct is better to use for creating parametrical modules ("for" loops) and for possibility using conditional construction (if-else).
