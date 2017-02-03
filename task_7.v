@@ -10,6 +10,8 @@ assign  out = a & ~{DATA_WIDTH{c}} | b & {DATA_WIDTH{c}};
 
 endmodule
 
+
+////		  For ALU 			////
 //// MULTIPLEXOR 8 DATA INPUTS ////
 module mux_8bit(data0, 
                 data1, 
