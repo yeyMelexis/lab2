@@ -16,17 +16,17 @@ module ALU_gate(a_in, b_in, q_out, sel_in);
   assign  to_mux[3] = {1'b0, 1'b0, 1'b0, 1'b0, from_out[3]};
   assign  to_mux[4] = {1'b0, 1'b0, 1'b0, 1'b0, from_out[4]};
   
-mux_8bit mux_8bit1(.data0(to_mux[0]), 
-                   .data1(to_mux[1]), 
-                   .data2(to_mux[2]), 
-                   .data3(to_mux[3]), 
-                   .data4(to_mux[4]), 
-                   .data5(4'd0), 
-                   .data6(4'd0), 
-                   .data7(4'd0), 
-                   .sel(sel_in), 
-                   .mux_out(q_out)
-                   );
+mux_8bit #(.DATA_WIDTH(2*DATA_WIDTH)) mux_8bit1(.data0(to_mux[0]), 
+											   .data1(to_mux[1]), 
+											   .data2(to_mux[2]), 
+											   .data3(to_mux[3]), 
+											   .data4(to_mux[4]), 
+											   .data5(4'd0), 
+											   .data6(4'd0), 
+											   .data7(4'd0), 
+											   .sel(sel_in), 
+											   .mux_out(q_out)
+											   );
                    
   multiplier_4bit mult_1( .x_in(a_in), 
                           .y_in(b_in), 

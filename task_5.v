@@ -1,10 +1,10 @@
 //// MULTIPLIER ////
 module multiplier_4bit(x_in, y_in, prod_out);
-  parameter DATA_WIDTH = 4;
-  input     [DATA_WIDTH-1:0]  x_in, y_in;
-  output    [2*DATA_WIDTH-1:0]  prod_out;
+
+  input     [3:0]  x_in, y_in;
+  output    [7:0]  prod_out;
   
-  wire      [DATA_WIDTH-1:0]  summand[0:3];
+  wire      [3:0]  summand[0:3];
   
   wire  [3:0] sum [0:2];
   wire        c   [0:2];

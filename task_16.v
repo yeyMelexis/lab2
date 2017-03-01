@@ -1,3 +1,6 @@
+/////////////////////////////
+//***Parametrical ADDER***//
+///////////////////////////
 module add_4bit(a_in, b_in, c_in, sum_out, c_out);
   parameter DATA_WIDTH = 4;
   ///Inputs

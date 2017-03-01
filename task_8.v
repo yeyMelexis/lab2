@@ -4,9 +4,9 @@
 module mux_tb;
   
 parameter DATA_WIDTH = 8;
-reg   [2*DATA_WIDTH - 1:0] a, b;
+reg   [DATA_WIDTH - 1:0] a, b;
 reg         c;
-wire  [2*DATA_WIDTH - 1:0] out;
+wire  [DATA_WIDTH - 1:0] out;
 
 initial begin
   a = $random;
@@ -23,11 +23,11 @@ initial begin
 end
 
 
-mux mux1( .a(a), 
-          .b(b), 
-          .c(c), 
-          .out(out)
-          );
+mux #(.DATA_WIDTH (DATA_WIDTH )) mux1( .a(a), 
+									  .b(b), 
+									  .c(c), 
+									  .out(out)
+									  );
 
 endmodule
 

@@ -39,7 +39,7 @@ endmodule
 
 
 
-//////// Generate parametrical module addre-substractor ////////
+//////// Generate parametrical module addrer-substractor ////////
 module generate_add(a_in, b_in, q_out, c_out);
   parameter WIDTH = 4;
   parameter mode = 0;
